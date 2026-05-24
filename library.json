@@ -1,0 +1,19 @@
+{
+    "name": "VL53L5CX_ULD_API",
+    "version": "2.0.1",
+    "description": "VL53L5CX_ULD_API",
+    "keywords": "VL53L5CX",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SG-O/VL53L5CX_ULD_API.git"
+    },
+    "license": "BSD-3-Clause",
+    "include": [
+        "inc/*",
+        "src/*"
+    ],
+    "build": {
+        "includeDir": "inc",
+        "srcDir": "src"
+    }
+}
