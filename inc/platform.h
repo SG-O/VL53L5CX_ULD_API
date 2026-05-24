@@ -21,7 +21,7 @@
 typedef void* VL53L5CX_FUNC_REF;
 
 typedef struct {
-  uint16_t address_;
+  uint16_t address;
   void* reference_;
   uint8_t (*rd_byte_func)(VL53L5CX_FUNC_REF reference, const uint16_t register_address, uint8_t *p_value);
   uint8_t (*wr_byte_func)(VL53L5CX_FUNC_REF reference, const uint16_t register_address, const uint8_t value);
