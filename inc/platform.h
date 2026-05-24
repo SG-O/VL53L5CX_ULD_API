@@ -18,6 +18,10 @@
 #include <stdint.h>
 #include <string.h>
 
+#ifdef __cplusplus
+extern "C"
+#endif
+
 typedef void* VL53L5CX_FUNC_REF;
 
 typedef struct {
@@ -158,5 +162,9 @@ void VL53L5CX_SwapBuffer(
 uint8_t VL53L5CX_WaitMs(
 		VL53L5CX_Platform *p_platform,
 		uint32_t TimeMs);
+
+#ifdef __cplusplus
+};
+#endif
 
 #endif	// _PLATFORM_H_
