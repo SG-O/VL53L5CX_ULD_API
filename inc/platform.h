@@ -19,7 +19,7 @@
 #include <string.h>
 
 #ifdef __cplusplus
-extern "C"
+extern "C" {
 #endif
 
 typedef void* VL53L5CX_FUNC_REF;
