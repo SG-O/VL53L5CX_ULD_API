@@ -22,15 +22,13 @@
 extern "C" {
 #endif
 
-typedef void* VL53L5CX_FUNC_REF;
-
 typedef struct {
   uint16_t address;
   void* reference_;
-  uint8_t (*rd_byte_func)(VL53L5CX_FUNC_REF reference, const uint16_t register_address, uint8_t *p_value);
-  uint8_t (*wr_byte_func)(VL53L5CX_FUNC_REF reference, const uint16_t register_address, const uint8_t value);
-  uint8_t (*rd_bytes_func)(VL53L5CX_FUNC_REF reference, const uint16_t register_address, uint8_t *p_values, const uint32_t size);
-  uint8_t (*wr_bytes_func)(VL53L5CX_FUNC_REF reference, const uint16_t register_address, const uint8_t *p_values, const uint32_t size);
+  uint8_t (*rd_byte_func)(void *reference, const uint16_t register_address, uint8_t *p_value);
+  uint8_t (*wr_byte_func)(void *reference, const uint16_t register_address, const uint8_t value);
+  uint8_t (*rd_bytes_func)(void *reference, const uint16_t register_address, uint8_t *p_values, const uint32_t size);
+  uint8_t (*wr_bytes_func)(void *reference, const uint16_t register_address, const uint8_t *p_values, const uint32_t size);
   void (*delay_func)(uint32_t ms);
 } VL53L5CX_Platform;
 
@@ -41,7 +39,9 @@ typedef struct {
  * zone means a lower RAM). The value must be between 1 and 4.
  */
 
+#ifndef VL53L5CX_NB_TARGET_PER_ZONE
 #define 	VL53L5CX_NB_TARGET_PER_ZONE		1U
+#endif
 
 /*
  * @brief The macro below can be used to avoid data conversion into the driver.
