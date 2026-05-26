@@ -15,5 +15,8 @@
     "build": {
         "includeDir": "inc",
         "srcDir": "src"
+    },
+    "dependencies": {
+        "external-repo": "https://github.com/SG-O/VL53L_ULD_API_platform.git"
     }
 }
